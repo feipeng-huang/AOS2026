@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Enter the secret word</h2>
+
+<input id="word" type="text">
+<button onclick="checkWord()">Submit</button>
+
+<p id="message"></p>
+
+<script>
+function checkWord() {
+  let answer = document.getElementById("word").value;
+
+  if (answer.toLowerCase() === "blueberry") {
+    document.getElementById("message").innerHTML =
+      "Your hidden text goes here!";
+  } else {
+    document.getElementById("message").innerHTML =
+      "Wrong word. Try again.";
+  }
+}
+</script>
+
+</body>
+</html>
