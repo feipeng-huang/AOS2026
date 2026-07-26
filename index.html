@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<h2>Enter the secret word</h2>
+<h2>Guess the location</h2>
 
 <input id="word" type="text">
 <button onclick="checkWord()">Submit</button>
@@ -11,14 +11,19 @@
 
 <script>
 function checkWord() {
-  let answer = document.getElementById("word").value;
+  let answer = document.getElementById("word").value
+    .toLowerCase()
+    .trim();
 
-  if (answer.toLowerCase().trim() === "umass natural history collections") {
+  if (
+    answer.includes("museum") ||
+    answer.includes("collection")
+  ) {
     document.getElementById("message").innerHTML =
       "Morrill Science Center II, Room 146";
   } else {
     document.getElementById("message").innerHTML =
-      "Wrong word. Try again.";
+      "Try again";
   }
 }
 </script>
