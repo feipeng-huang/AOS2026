@@ -2,9 +2,9 @@
 <html>
 <body>
 
-<h2>Guess the location</h2>
+<h2>Welcome to The Great Feathered Pursuit! Guess the Location below.</h2>
 
-<input id="word" type="text">
+<input id="word" type="text" placeholder="Enter your guess">
 <button onclick="checkWord()">Submit</button>
 
 <p id="message"></p>
@@ -15,16 +15,34 @@ function checkWord() {
     .toLowerCase()
     .trim();
 
-  if (
-    answer.includes("museum") ||
-    answer.includes("collection")
-  ) {
-    document.getElementById("message").innerHTML =
-      "Morrill Science Center II, Room 146";
-  } else {
-    document.getElementById("message").innerHTML =
-      "Try again";
+  let message = "Try again";
+
+  if (answer.includes("library")) {
+    message = "Congrats! Look for the card by the front doors of the W.E.B. Du Bois Library.";
   }
+  else if (answer.includes("collision") || answer.includes("window")) {
+    message = "Congrats! Look for the card at the Reflections on Collisions exhibit in the Amherst Room on the 10th floor of the Campus Center.";
+  }
+  else if (answer.includes("willow")) {
+    message = "Congrats! Find the weeping willow by the Southwest Residential/University Drive (N) bus stop.";
+  }
+  else if (answer.includes("museum") || answer.includes("collection")) {
+    message = "Congrats! Look for the card at the Natural History Collections exhibit in Morrill Science Center II, Room 146.";
+  }
+  else if (answer.includes("garden")) {
+    message = "Congrats! Look for the card in the Franklin Permaculture Garden.";
+  }
+  else if (answer.includes("wall")) {
+    message = "Congrats! Look for the card at the Berlin Wall Segment.";
+  }
+  else if (answer.includes("hill")) {
+    message = "Congrats! Look for the card at the Orchard Hill Pavilion (42.39488° N, 72.52058° W).";
+  }
+  else if (answer.includes("pond")) {
+    message = "Congrats! Look for the card on the bridge at the south end of the Campus Pond.";
+  }
+
+  document.getElementById("message").innerHTML = message;
 }
 </script>
 
